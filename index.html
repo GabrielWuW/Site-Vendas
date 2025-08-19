@@ -15,19 +15,34 @@
 </head>
 
 <body>
-    <header>
+    <!-- Background -->
+    <div class="bubbles" aria-hidden="true">
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+        <span class="bubble b4"></span>
+        <span class="bubble b5"></span>
+        <span class="bubble b6"></span>
+        <span class="bubble b7"></span>
+        <span class="bubble b8"></span>
+    </div>
+
+    <header class="janela">
         <img class="logo" src="img/site-imgs/logo.jpg" alt="">
-        <input type="text" placeholder="Pesquisar">
+        <div class="container-pesquisa">
+            <input type="text" placeholder="Pesquisar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
     </header>
-    <div class="cep">
-        <div style="display: flex; gap: 1vh; align-items: center;">
+    <div class="menuDois">
+        <div class="janela" style="display: flex; gap: 1vh; align-items: center;">
             <i class="fa-solid fa-location-dot"></i>
             <div style="display: flex; flex-direction: column;">
                 <p>Informe seu</p>
                 <span>CEP</span>
             </div>
         </div>
-        <ul>
+        <ul class="janela">
             <li>Categorias</li>
             <li>Ofertas</li>
             <li>Cupons</li>
@@ -35,7 +50,7 @@
             <li>Moda</li>
             <li>contato</li>
         </ul>
-        <div class="conta">
+        <div class="conta janela">
             <p>Crie sua conta</p>
             <p>Entre</p>
             <i class="fa-solid fa-cart-shopping"></i>
@@ -43,4 +58,5 @@
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

@@ -1,63 +1,329 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #c2c7cc 0%, #8e959d 100%);
+    background-attachment: fixed;
     background-size: cover;
+
+    position: relative;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
 }
 
+/* Header */
 header {
-    border: 1.9px solid white;
-    border-radius: 3vh;
-    background: #f2f2f2b4;
-    background: radial-gradient(circle, rgba(243, 243, 243, 0.9) 0%, rgba(255, 255, 255, 0.900) 100%);
     width: 90%;
     height: 13vh;
     margin-top: 2vh;
+    padding: 0 3vh;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: -2px 18px 18px -4px rgba(171, 171, 171, 0.75);
-    -webkit-box-shadow: -2px 18px 18px -4px rgba(171, 171, 171, 0.75);
-    -moz-box-shadow: -2px 18px 18px -4px rgba(171, 171, 171, 0.75);
-    backdrop-filter: blur(2px);
+    color: #1f1f1f;
+    position: relative;
+    z-index: 1;
+}
+
+.janela {
+    background: rgba(255, 255, 255, 0.5);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3vh;
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     width: 8rem;
 }
 
-.cep {
+/* Campo de pesquisa */
+.container-pesquisa {
     display: flex;
-    width: 90%;
-    padding: 1.5vh 3vh;
-    font-family: "Poppins", sans-serif;
     align-items: center;
-    gap: 1vh;
-    justify-content: space-between;
-    text-shadow: -1px 2px 7px rgba(77, 77, 77, 0.52);
+    position: relative;
 }
 
-.cep i {
+header input[type="text"] {
+    width: 40rem;
+    padding: 0.6rem 1rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+
+    background: #ffffff8c;
+    color: #1f1f1f;
+    font-size: 1rem;
+
+    box-shadow: -4px 5px 16px rgba(79, 79, 79, 0.6);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+header input[type="text"]::placeholder {
+    color: rgba(31, 31, 31, 0.6);
+    font-weight: 300;
+}
+
+header input[type="text"]:focus {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.fa-magnifying-glass {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #8e959d;
+    width: 5vh;
+    height: 100%;
+}
+
+.fa-magnifying-glass:hover {
+    cursor: pointer;
+}
+
+/* Menu inferior */
+.menuDois {
+    width: 90%;
+    padding: 1.5vh 3vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vh;
+
+    font-family: "Poppins", sans-serif;
+    text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+}
+
+.menuDois i {
     font-size: 2rem;
 }
 
-.cep ul {
+.menuDois ul {
     display: flex;
     list-style: none;
     gap: 1.5vh;
 }
 
+/* Conta */
 .conta {
     display: flex;
+    align-items: center;
     gap: 1.5vh;
 }
 
 .conta i {
     font-size: 1.5rem;
+}
+
+
+
+
+
+/*Background*/
+:root {
+    --bg-1: #c2c7cc;
+    --bg-2: #8e959d;
+
+    --bubble-a: #b6d4f0;
+    --bubble-b: #a8d5c2;
+    --bubble-c: #d0b6f0;
+
+    --bubble-alpha: 0.9;
+}
+
+.bubbles {
+    position: fixed;
+    inset: -20vmax;
+    z-index: -9999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+
+    background-color: rgba(211, 217, 224, var(--bubble-alpha));
+    background-image:
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.35) 35%, rgba(255, 255, 255, 0) 60%),
+        radial-gradient(circle at 70% 75%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 55%);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        inset 0 3px 12px rgba(255, 255, 255, 0.45),
+        inset 0 -6px 14px rgba(0, 0, 0, 0.12);
+
+    will-change: transform, filter, border-radius;
+    animation:
+        bubble-move var(--dur, 24s) linear infinite alternate,
+        bubble-breathe calc(var(--dur, 24s) * 0.6) ease-in-out infinite;
+    filter: saturate(1.05) contrast(1.04);
+    opacity: 0.9;
+}
+
+.b1,
+.b4,
+.b7 {
+    background-color: color-mix(in oklab, var(--bubble-a), white 8%);
+}
+
+.b2,
+.b5,
+.b8 {
+    background-color: color-mix(in oklab, var(--bubble-b), white 8%);
+}
+
+.b3,
+.b6 {
+    background-color: color-mix(in oklab, var(--bubble-c), white 8%);
+}
+
+.b1 {
+    --size: 34vmin;
+    width: var(--size);
+    top: 8%;
+    left: 6%;
+    --tx: 18vmin;
+    --ty: -6vmin;
+    --rot: 16deg;
+    --dur: 28s;
+}
+
+.b2 {
+    --size: 26vmin;
+    width: var(--size);
+    top: 18%;
+    left: 68%;
+    --tx: -22vmin;
+    --ty: 10vmin;
+    --rot: -12deg;
+    --dur: 22s;
+}
+
+.b3 {
+    --size: 20vmin;
+    width: var(--size);
+    top: 58%;
+    left: 8%;
+    --tx: 14vmin;
+    --ty: -18vmin;
+    --rot: 24deg;
+    --dur: 26s;
+}
+
+.b4 {
+    --size: 42vmin;
+    width: var(--size);
+    top: 62%;
+    left: 54%;
+    --tx: -12vmin;
+    --ty: -12vmin;
+    --rot: 10deg;
+    --dur: 32s;
+}
+
+.b5 {
+    --size: 18vmin;
+    width: var(--size);
+    top: 30%;
+    left: 38%;
+    --tx: 10vmin;
+    --ty: 16vmin;
+    --rot: -8deg;
+    --dur: 18s;
+}
+
+.b6 {
+    --size: 24vmin;
+    width: var(--size);
+    top: 76%;
+    left: 22%;
+    --tx: 20vmin;
+    --ty: -8vmin;
+    --rot: 14deg;
+    --dur: 24s;
+}
+
+.b7 {
+    --size: 16vmin;
+    width: var(--size);
+    top: 12%;
+    left: 86%;
+    --tx: -14vmin;
+    --ty: 12vmin;
+    --rot: -18deg;
+    --dur: 20s;
+}
+
+.b8 {
+    --size: 30vmin;
+    width: var(--size);
+    top: 84%;
+    left: 74%;
+    --tx: -18vmin;
+    --ty: -14vmin;
+    --rot: 22deg;
+    --dur: 30s;
+}
+
+@keyframes bubble-move {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate3d(calc(var(--tx) * 0.55), calc(var(--ty) * 0.55), 0) rotate(calc(var(--rot) * 0.6)) scale(1.03);
+    }
+
+    100% {
+        transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rot)) scale(1);
+    }
+}
+
+@keyframes bubble-breathe {
+
+    0%,
+    100% {
+        border-radius: 50%;
+        filter: blur(0px);
+        opacity: 0.82;
+    }
+
+    50% {
+        border-radius: 48% 52% 50% 50% / 52% 48% 52% 48%;
+        filter: blur(0.2px);
+        opacity: 0.88;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bubble {
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .bubble {
+        width: calc(var(--size) * 0.75);
+    }
 }
