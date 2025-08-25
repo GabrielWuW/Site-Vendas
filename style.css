@@ -32,7 +32,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: #1f1f1f;
-    position: relative;
+    position: fixed;
     z-index: 1;
 }
 
@@ -85,6 +85,11 @@ header input[type="text"]:focus {
     background: rgba(255, 255, 255, 0.5);
 }
 
+.divisor {
+    width: 100%;
+    height: 23vh;
+}
+
 .fa-magnifying-glass {
     position: absolute;
     right: 0;
@@ -104,6 +109,7 @@ header input[type="text"]:focus {
 .menuDois {
     width: 90%;
     padding: 1.5vh 3vh;
+    margin-top: 17vh;
 
     display: flex;
     align-items: center;
@@ -112,6 +118,8 @@ header input[type="text"]:focus {
 
     font-family: "Poppins", sans-serif;
     text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+    position: fixed;
+    z-index: 999;
 }
 
 .menuDois i {
@@ -128,15 +136,517 @@ header input[type="text"]:focus {
 .conta {
     display: flex;
     align-items: center;
-    gap: 1.5vh;
+    gap: 3vh;
+    justify-content: center;
+}
+
+.conta p,
+.conta i {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 1.5vh;
+    border-radius: 3vh;
+    transition: 0.2s;
+}
+
+.conta p:hover,
+.conta i:hover {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
 
 .conta i {
+    font-size: 1.3rem;
+}
+
+.caixa_cep {
+    display: flex;
+    gap: 1vh;
+    align-items: center;
+    padding: 0px 2vh;
+}
+
+.caixa_cep:hover {
+    cursor: pointer;
+}
+
+.janela li {
+    padding: 0px 2vh;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    border-radius: 2vh;
+    transition: 0.2s;
+}
+
+.janela li:hover {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.container_carrosel {
+    width: 90%;
+    height: 60vh;
+    margin-top: 7vh;
+    border-radius: 3vh;
+
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Slide principal */
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    gap: 2rem;
+}
+
+/* Texto */
+.carousel-texto {
+    flex: 1;
+    color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carousel-texto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.carousel-texto p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #333;
+    max-width: 400px;
+}
+
+.btn-carrosel {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-carrosel:hover,
+.btn-verDetalhes:hover {
+    background: #333;
+}
+
+.carousel-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-imagem img {
+    width: 50vh;
+    transition: transform 0.4s ease;
+}
+
+.carousel-imagem img:hover {
+    transform: scale(1.05);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-btn i {
+    font-size: 1.5rem;
+    color: #1f1f1f;
+}
+
+.carousel-btn.left {
+    left: 20px;
+}
+
+.carousel-btn.right {
+    right: 20px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.carousel-indicators span {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators span.active {
+    background: #1f1f1f;
+    transform: scale(1.2);
+}
+
+.cards-cima {
+    width: 100%;
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+    flex-wrap: wrap;
+    backdrop-filter: blur(3px);
+
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.26) 10%,
+            rgba(255, 255, 255, 0.26) 100%);
+}
+
+.card {
+    width: 30vh;
+    height: 43vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 3vh;
+    text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+    transition: 0.4s;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.card .titulo {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.card img {
+    width: 22vh;
+}
+
+.valores_atuais {
+    display: flex;
+    gap: 1vh;
+}
+
+.valor_antes {
+    text-decoration: line-through;
+    font-size: 1.4vh;
+    color: rgb(63, 63, 63);
+}
+
+.valor_agora {
+    font-size: 2.5vh;
+}
+
+.porcentagem_desconto {
+    color: green;
+    font-size: 1.5vh;
+}
+
+.frete {
+    color: green;
+    font-weight: bolder;
+}
+
+.ofertas_container {
+    width: 100%;
+    display: flex;
+    gap: 2vh;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.26);
+    text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+}
+
+.oferta-dia {
+    width: 50vh;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 2vh;
+    justify-content: space-around;
+}
+
+.oferta-dia .titulo,
+.ofertas .titulo {
+    font-weight: bolder;
+    font-size: 1.7rem;
+}
+
+.oferta-dia img {
+    width: 40vh;
+}
+
+.alinhar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dividir {
+    color: green;
+}
+
+.btn-verDetalhes {
+    background: #1f1f1f;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin-top: 2vh;
+}
+
+.ofertas {
+    width: 65%;
+    padding: 1.2vh 2vh;
+}
+
+.oferta_item {
+    border-right: 2px solid #333;
+    height: 100%;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0px 2vh;
+}
+
+.itens-Ofertas {
+    border-left: 2px solid #333;
+    height: 90%;
+    display: flex;
+}
+
+.oferta_item:hover {
+    cursor: pointer;
+}
+
+.ofertasTextos {
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.mostrar_ofertas {
+    font-weight: bolder;
+    font-size: .8rem;
+}
+
+.mostrar_ofertas:hover {
+    cursor: pointer;
+}
+
+.ofertaImg {
+    width: 50vh;
+}
+
+.maisVendidos_container {
+    background-color: rgba(255, 255, 255, 0.26);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.containerMaisVendidos {
+    height: 100%;
+    width: 96%;
+    margin-top: 5vh;
+    text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
+    padding: 2vh;
+}
+
+.containerMaisVendidos .titulo {
+    font-weight: bolder;
     font-size: 1.5rem;
 }
 
+.itensMaisVendidos {
+    margin-top: 2vh;
+    border-left: 2px solid #333;
+    display: flex;
+    justify-content: center;
+}
 
+.itensMaisVendidos:hover {
+    cursor: pointer;
+}
 
+.itemMaisVendido {
+    border-right: 2px solid #333;
+    width: 30vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vh;
+}
+
+.itemMaisVendido img {
+    width: 100%;
+}
+
+.infos {
+    background-color: rgba(255, 255, 255, 0.26);
+    width: 100%;
+    padding: 2% 5%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.infosDescs {
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.cardInfo {
+    width: 70vh;
+    height: 35vh;
+    justify-content: space-between;
+    display: flex;
+}
+
+.cardInfo img {
+    border-radius: 2vh;
+}
+
+.infosDescs .title {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.infosDescs .desc {
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.26);
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+}
+
+.rodape {
+    width: 95%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    margin-bottom: 5vh;
+
+}
+
+.rodape i {
+    color: #333;
+    border: 3px solid #333;
+    border-radius: 50%;
+    padding: 1vh;
+    font-size: 2rem;
+    transition: 0.2s;
+}
+
+.rodape i:hover {
+    background-color: #8e959d1f;
+    cursor: pointer;
+}
+
+.redes {
+    display: flex;
+    gap: 2vh;
+}
+
+.footerTextos {
+    display: flex;
+    gap: 2vh;
+}
+
+.footerTextos p {
+    width: 18vh;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5vh;
+    transition: 0.2s;
+}
+
+.footerTextos p:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.creditos {
+    border-bottom: 1px solid #333;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1vh;
+}
 
 
 /*Background*/
