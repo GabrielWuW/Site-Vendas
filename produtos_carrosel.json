@@ -25,5 +25,14 @@
         "imagem": "mouse-gamer-logitech-g-pro.png",
         "categoria": "Informática",
         "classificacao": 2
+    },
+    {
+        "id": 4,
+        "nome": "Teclado Mecânico Redragon Kumara",
+        "descricao": "Teclado mecânico com switches Outemu Blue e iluminação em LED",
+        "preco": 219.99,
+        "imagem": "teclado-mecanico-redragon-kumara.png",
+        "categoria": "Informática",
+        "classificacao": 5
     }
 ]
