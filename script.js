@@ -71,6 +71,7 @@ const containerCardsCima = document.querySelector('.cards-cima');
 
 //criando os cards de cima
 function criarCardCima(itemAtual) {
+    //Criando o card com variaveis (jeito noggers)
 
     // Container Principal
     let cardContainer = document.createElement('div');
@@ -142,3 +143,63 @@ itensInteresse.forEach(item => {
     let card = criarCardCima(item);
     containerCardsCima.appendChild(card);
 });
+
+// Criando os cards de ofertas
+import itensOfertas from './jsons/produtos_ofertas.json' with {type: 'json'};
+const ofertasContainer = document.querySelector('.ofertas_container');
+
+const itemOfertaDia = itensOfertas.find(item => item['oferta-dia'] === true);
+const restoOfertas = itensOfertas.filter(item => item['oferta-dia'] === false);
+
+let htmlOfertas = '';
+
+// Oferta do dia
+if (itemOfertaDia) {
+    htmlOfertas += `
+        <div class="oferta-dia janela">
+            <p class="titulo">Oferta do dia</p>
+            <div class="alinhar"><img src="img/${itemOfertaDia.imagem}" alt=""></div>
+            <p class="nome">${itemOfertaDia.nome}</p>
+            <div class="valores">
+                <p class="valor_antes">R$ ${itemOfertaDia.preco}</p>
+                <div class="valores_atuais">
+                    <p class="valor_agora">R$ ${itemOfertaDia.preco}</p>
+                    <p class="porcentagem_desconto">${itemOfertaDia.desconto}% OFF</p>
+                </div>
+                <p class="dividir">8x R$ 51,12 sem juros</p>
+                <p class="frete">Frete Grátis</p>
+                <div class="alinhar"><button class="btn-verDetalhes">Ver detalhes</button></div>
+            </div>
+        </div>
+    `;
+}
+
+// Outras ofertas
+if (restoOfertas.length > 0) {
+    htmlOfertas += `
+        <div class="ofertas janela">
+            <div class="ofertasTextos">
+                <p class="titulo">Ofertas</p>
+                <p class="mostrar_ofertas">Mostrar todas as ofertas</p>
+            </div>
+            <div class="itens-Ofertas">
+                ${restoOfertas.map(item => `
+                    <div class="oferta_item">
+                        <div class="alinhar"><img class="ofertaImg" src="img/${item.imagem}" alt=""></div>
+                        <p class="nome">${item.nome}</p>
+                        <div class="valores">
+                            <p class="valor_antes">R$ ${item.preco}</p>
+                            <div class="valores_atuais">
+                                <p class="valor_agora">R$ ${item.preco}</p>
+                                <p class="porcentagem_desconto">${item.desconto}% OFF</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
+// Adiciona tudo ao container
+ofertasContainer.innerHTML = htmlOfertas;

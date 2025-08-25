@@ -8,7 +8,7 @@
         "categoria": "Eletrônicos",
         "classificacao": 3,
         "desconto": 20,
-        "oferta-dia": true
+        "oferta-dia": false
     },
     {
         "id": 8,
@@ -19,7 +19,7 @@
         "categoria": "Eletrônicos",
         "classificacao": 4,
         "desconto": 20,
-        "oferta-dia": false
+        "oferta-dia": true
     },
     {
         "id": 9,
