@@ -120,8 +120,12 @@ header input[type="text"]:focus {
     text-shadow: -1px 2px 7px rgba(26, 26, 26, 0.842);
     position: fixed;
     z-index: 999;
+
+    /* Adicionando a transição para suavizar */
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
+/* Ícones */
 .menuDois i {
     font-size: 2rem;
 }
@@ -131,6 +135,22 @@ header input[type="text"]:focus {
     list-style: none;
     gap: 1.5vh;
 }
+
+/* Estado oculto (quando rola para baixo) */
+.menuDois.oculto {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(10px);
+}
+
+/* Estado visível (quando rola para cima) */
+.menuDois.visivel {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+
 
 /* Conta */
 .conta {

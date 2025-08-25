@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nome": "Notebook Dell Inspiron 15 3000",
+        "descricao": "Notebook com processador Intel Core i5, 8GB de RAM e 256GB de SSD",
+        "preco": 3999.99,
+        "imagem": "notebook-dell-inspiron-15-3000.png",
+        "categoria": "Informática",
+        "classificacao": 2
+    },
+    {
+        "id": 2,
+        "nome": "Monitor Samsung LED 23.8 polegadas",
+        "descricao": "Monitor LED com resolução Full HD e tempo de resposta de 5ms",
+        "preco": 799.99,
+        "imagem": "monitor-samsung-led-23.8.png",
+        "categoria": "Informática",
+        "classificacao": 4
+    },
+    {
+        "id": 3,
+        "nome": "Mouse Gamer Logitech G Pro",
+        "descricao": "Mouse com sensor HERO 25K, 6 botões programáveis e 16000 DPI",
+        "preco": 299.99,
+        "imagem": "mouse-gamer-logitech-g-pro.png",
+        "categoria": "Informática",
+        "classificacao": 2
+    }
+]
