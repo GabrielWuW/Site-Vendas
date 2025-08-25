@@ -1,0 +1,42 @@
+[
+    {
+        "id": 7,
+        "nome": "Caixa de Som JBL Flip 5",
+        "descricao": "Caixa de som portátil com Bluetooth, resistente à água e bateria com duração de até 12 horas",
+        "preco": 499.99,
+        "imagem": "caixa-de-som-jbl-flip-5.png",
+        "categoria": "Eletrônicos",
+        "classificacao": 3,
+        "desconto": 20
+    },
+    {
+        "id": 8,
+        "nome": "Fone de Ouvido Bluetooth JBL Tune 500BT",
+        "descricao": "Fone de ouvido com conectividade Bluetooth, bateria com duração de até 16 horas e microfone integrado",
+        "preco": 299.99,
+        "imagem": "fone-de-ouvido-bluetooth-jbl-tune-500bt.png",
+        "categoria": "Eletrônicos",
+        "classificacao": 4,
+        "desconto": 20
+    },
+    {
+        "id": 9,
+        "nome": "Smartwatch Samsung Galaxy Watch 3",
+        "descricao": "Smartwatch com tela de 1.4 polegadas, GPS integrado e bateria com duração de até 56 horas",
+        "preco": 2799.99,
+        "imagem": "smartwatch-samsung-galaxy-watch-3.png",
+        "categoria": "Eletrônicos",
+        "classificacao": 4,
+        "desconto": 10
+    },
+    {
+        "id": 10,
+        "nome": "Câmera Sony Alpha a7 III",
+        "descricao": "Câmera mirrorless com sensor full-frame de 24.2 MP, estabilização de imagem de 5 eixos e gravação de vídeo em 4K",
+        "preco": 12999.99,
+        "imagem": "camera-sony-alpha-a7-iii.png",
+        "categoria": "Eletrônicos",
+        "classificacao": 4,
+        "desconto": 25
+    }
+]
